@@ -23,7 +23,9 @@ dependencies {
 }
 
 distZip {
-    archiveName = 'beagle-admin.zip'
+    // You only need to set this if you have specified an archive version. This removes the version number
+    // from the final distribution package which makes it easier to script in your Dockerfile.
+    archiveName = 'ratpack-docker-example.zip'
 }
 
 task buildImage(type: DockerBuildImage) {

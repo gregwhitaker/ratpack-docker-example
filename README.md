@@ -7,6 +7,36 @@ An example of how to package a [Ratpack](https://www.ratpack.io) application as 
 
         $ ./gradlew buildImage
 
+   Once the build completes you will see Docker Image ID that was created in the console:
+   
+       > Task :buildImage
+       Created image with ID '02e353fa9cc5'.
+       
+2. Start the newly created Docker container with the following command:
+
+        $ docker run -p5050:5050 -d {image id}
+        
+3. Test that the service is running in the container by executing the following command:
+
+        $ curl -v http://localhost:5050/example
+
+    If successful you will receive an HTTP 200 similar to the following:
+    
+        *   Trying ::1...
+        * TCP_NODELAY set
+        * Connected to localhost (::1) port 5050 (#0)
+        > GET /example HTTP/1.1
+        > Host: localhost:5050
+        > User-Agent: curl/7.54.0
+        > Accept: */*
+        >
+        < HTTP/1.1 200 OK
+        < content-type: text/plain;charset=UTF-8
+        < content-length: 17
+        <
+        * Connection #0 to host localhost left intact
+        This thing works!
+        
 ## Bugs and Feedback
 For bugs, questions, and discussions please use the [Github Issues](https://github.com/gregwhitaker/ratpack-docker-example/issues).
 
