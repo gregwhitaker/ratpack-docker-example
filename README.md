@@ -1,4 +1,5 @@
 # ratpack-docker-example
+[![Build Status](https://travis-ci.org/gregwhitaker/ratpack-docker-example.svg?branch=master)](https://travis-ci.org/gregwhitaker/ratpack-docker-example)
 
 An example of how to package a [Ratpack](https://www.ratpack.io) application as a Docker container.
 
